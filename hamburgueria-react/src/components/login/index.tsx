@@ -1,13 +1,11 @@
-import logo from "../img/logoKenzie.svg";
-import bag from "../img/bag.png";
 import { useForm } from "react-hook-form";
 import { loginSchema } from "../../schema/loginSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext } from "react";
 import { iLogin, LoginContext } from "../../context/loginContext";
 import { Toaster } from "react-hot-toast";
-import { Aside } from "../../styles/slogan";
 import { Div, LinkStyle } from "../../styles/login";
+import { Slogan } from "../slogan";
 
 export function Login() {
   const { submit } = useContext(LoginContext);
@@ -42,18 +40,7 @@ export function Login() {
         <LinkStyle to="/register">Cadastrar</LinkStyle>
       </section>
 
-      <Aside>
-        <img src={logo} alt="logo hamburgueria" />
-        <div>
-          <div className="div-img">
-            <img src={bag} alt="" />
-          </div>
-          <p>
-            A vida é como um sanduíche, é preciso recheá-la com os{" "}
-            <strong>melhores</strong> ingredientes.
-          </p>
-        </div>
-      </Aside>
+      <Slogan />
     </Div>
   );
 }

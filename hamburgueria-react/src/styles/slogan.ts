@@ -7,7 +7,20 @@ export const Aside = styled.aside`
   justify-content: center;
   gap: 30px;
 
-  div {
+  .logo {
+    display: flex;
+    gap: 0;
+    background-color: var(--white);
+    align-items: center;
+  }
+
+  .logo span {
+    height: 50px;
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+
+  .slogan {
     display: flex;
     width: 377px;
     height: 95px;
@@ -23,7 +36,7 @@ export const Aside = styled.aside`
   .div-img {
     width: 60px;
     height: 60px;
-    padding: 16px 18px 16px 18px;
+    padding: 14px 18px 16px 14px;
     align-items: center;
     justify-content: center;
     background-color: var(--color-primery-50);

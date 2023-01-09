@@ -58,6 +58,11 @@ export const Div = styled.div`
     font-weight: 600;
     font-size: 16px;
   }
+
+  button:hover {
+    border: solid 1px var(--color-primery);
+    color: var(--color-primery);
+  }
 `;
 
 export const LinkStyle = styled(Link)`
@@ -66,4 +71,8 @@ export const LinkStyle = styled(Link)`
   text-align: center;
   font-weight: 400;
   font-size: 14px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;

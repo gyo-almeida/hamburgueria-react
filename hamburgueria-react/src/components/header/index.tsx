@@ -1,4 +1,3 @@
-import logo from "../img/logoKenzie.svg";
 import cart from "../img/cart.png";
 import exit from "../img/exit.png";
 import Modal from "react-modal";
@@ -36,7 +35,10 @@ export function Header() {
 
   return (
     <HeaderStyle>
-      <img src={logo} alt="logo hamburgueria da Kenzie" />
+      <div className="logo">
+        <h1>Burguer</h1>
+        <span>React</span>
+      </div>
 
       <section className="nav-section">
         <form onSubmit={submit}>

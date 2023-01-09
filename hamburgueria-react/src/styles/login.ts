@@ -69,6 +69,9 @@ export const Div = styled.div`
 `;
 
 export const LinkStyle = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   height: 50px;
   background-color: var(--grey-0);
@@ -79,4 +82,9 @@ export const LinkStyle = styled(Link)`
   text-align: center;
   font-weight: 600;
   font-size: 16px;
+
+  &:hover {
+    border: solid 2px var(--color-secondary);
+    color: var(--color-secondary);
+  }
 `;

@@ -9,6 +9,19 @@ export const HeaderStyle = styled.header`
   width: 100%;
   background-color: var(--grey-0);
 
+  .logo {
+    display: flex;
+    gap: 0;
+    background-color: var(--grey-0);
+    align-items: center;
+  }
+
+  .logo span {
+    height: 50px;
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+
   section {
     width: 40%;
     display: flex;
@@ -64,7 +77,7 @@ export const HeaderStyle = styled.header`
     text-align: center;
     font-size: 12px;
     color: var(--grey-0);
-    background-color: var(--color-primery);
+    background-color: var(--color-secondary);
     border-radius: 4px;
   }
 `;

@@ -1,5 +1,3 @@
-import logo from "../img/logoKenzie.svg";
-import bag from "../img/bag.png";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { registerSchema } from "../../schema/registerSchema";
@@ -7,7 +5,7 @@ import { useContext } from "react";
 import { RegisterContext, iData } from "../../context/registerContext";
 import { Div, LinkStyle } from "../../styles/register";
 import { Toaster } from "react-hot-toast";
-import { Aside } from "../../styles/slogan";
+import { Slogan } from "../slogan";
 
 export function Register() {
   const { submit } = useContext(RegisterContext);
@@ -25,16 +23,7 @@ export function Register() {
   return (
     <Div>
       <Toaster />
-      <Aside>
-        <img src={logo} alt="logo hamburgueria" />
-        <div>
-          <img src={bag} alt="" />
-          <p>
-            A vida é como um sanduíche, é preciso recheá-la com os{" "}
-            <strong>melhores</strong> ingredientes.
-          </p>
-        </div>
-      </Aside>
+      <Slogan />
 
       <form onSubmit={handleSubmit(submitForm)}>
         <div className="header">
