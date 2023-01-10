@@ -25,7 +25,7 @@ export function Header() {
   }
 
   function removeProfile() {
-    localStorage.removeItem("@USERID");
+    localStorage.removeItem("@USER");
     localStorage.removeItem("@TOKEN");
     navigate("/", { replace: true });
   }

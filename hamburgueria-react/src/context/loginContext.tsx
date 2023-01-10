@@ -1,8 +1,13 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import toast from "react-hot-toast";
 import { Outlet, useNavigate } from "react-router-dom";
 import { api } from "../request/api";
-import { ProductContext } from "./productsContext";
 
 interface iLoginProps {
   children: React.ReactNode;
@@ -12,6 +17,7 @@ interface iLoginContext {
   submit: (data: iLogin) => Promise<void>;
   user: iLogin | null;
   loading: boolean;
+  setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface iLogin {
@@ -22,8 +28,6 @@ export interface iLogin {
 export const LoginContext = createContext({} as iLoginContext);
 
 export function LoginProvider({ children }: iLoginProps) {
-  const { getApi } = useContext(ProductContext);
-
   const [user, setUser] = useState<iLogin | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -40,7 +44,6 @@ export function LoginProvider({ children }: iLoginProps) {
 
       try {
         setUser(user);
-        getApi();
       } catch (error) {
         console.error(error);
       } finally {
@@ -49,7 +52,7 @@ export function LoginProvider({ children }: iLoginProps) {
     }
 
     loadingUser();
-  }, [getApi]);
+  }, []);
 
   async function submit(data: iLogin) {
     try {
@@ -58,12 +61,13 @@ export function LoginProvider({ children }: iLoginProps) {
       const response = request.data;
       const { accessToken, user: userResponse } = response;
 
+      const userJson = JSON.stringify(userResponse);
+
       localStorage.setItem("@TOKEN", accessToken);
-      localStorage.setItem("@USER", userResponse);
+      localStorage.setItem("@USER", userJson);
 
       setUser(userResponse);
       navigate("/homePage", { replace: true });
-      getApi();
     } catch (error) {
       toast.error(`Falha no login. Tente novamente!`, {
         style: {
@@ -84,7 +88,7 @@ export function LoginProvider({ children }: iLoginProps) {
 
   return (
     <>
-      <LoginContext.Provider value={{ submit, user, loading }}>
+      <LoginContext.Provider value={{ submit, user, loading, setLoading }}>
         {children}
       </LoginContext.Provider>
 
