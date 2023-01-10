@@ -12,7 +12,7 @@ export const Div = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 400px;
+    max-width: 400px;
     height: auto;
     border: 2px solid var(--grey-0);
     padding: 24px;
@@ -65,6 +65,16 @@ export const Div = styled.div`
     font-size: 14px;
     color: var(--grey-50);
     text-align: center;
+  }
+
+  @media (max-width: 699px) {
+    flex-direction: column-reverse;
+    gap: 0;
+
+    section {
+      padding: 5%;
+      align-items: center;
+    }
   }
 `;
 

@@ -4,17 +4,20 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { RegisterProvider } from "./context/registerContext";
 import { ProductProvider } from "./context/productsContext";
+import { LoginProvider } from "./context/loginContext";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <RegisterProvider>
-        <ProductProvider>
-          <App />
-        </ProductProvider>
-      </RegisterProvider>
+      <LoginProvider>
+        <RegisterProvider>
+          <ProductProvider>
+            <App />
+          </ProductProvider>
+        </RegisterProvider>
+      </LoginProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

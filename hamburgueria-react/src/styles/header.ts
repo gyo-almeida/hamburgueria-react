@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const HeaderStyle = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 0 8%;
+  padding: 20px 8%;
   align-items: center;
-  height: 80px;
   width: 100%;
   background-color: var(--grey-0);
 
@@ -26,6 +25,7 @@ export const HeaderStyle = styled.header`
     width: 40%;
     display: flex;
     gap: 40px;
+    justify-content: flex-end;
   }
 
   form {
@@ -69,9 +69,9 @@ export const HeaderStyle = styled.header`
   }
 
   .icons span {
-    position: absolute;
-    top: 25px;
-    right: 156px;
+    position: relative;
+    bottom: 10px;
+    left: 48%;
     width: 16px;
     height: 15px;
     text-align: center;
@@ -79,5 +79,40 @@ export const HeaderStyle = styled.header`
     color: var(--grey-0);
     background-color: var(--color-secondary);
     border-radius: 4px;
+  }
+
+  .search-mobile {
+    display: none;
+  }
+
+  @media (max-width: 850px) {
+    form button {
+      color: transparent;
+    }
+
+    section {
+      gap: 0;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 699px) {
+    flex-direction: column;
+    gap: 14px;
+    padding: 5px 8% 18px 8%;
+    justify-content: center;
+
+    .search-mobile {
+      display: flex;
+      margin-right: -37px;
+    }
+
+    .icons span {
+      left: 45%;
+    }
+
+    form {
+      display: none;
+    }
   }
 `;

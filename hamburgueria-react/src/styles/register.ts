@@ -63,6 +63,22 @@ export const Div = styled.div`
     border: solid 1px var(--color-primery);
     color: var(--color-primery);
   }
+
+  @media (max-width: 699px) {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @media (max-width: 399px) {
+    form {
+      width: 90%;
+      padding: 10px;
+    }
+
+    .header {
+      width: 90%;
+    }
+  }
 `;
 
 export const LinkStyle = styled(Link)`
@@ -74,5 +90,11 @@ export const LinkStyle = styled(Link)`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 390px) {
+    display: flex;
+    font-size: 0.75em;
+    width: 40%;
   }
 `;

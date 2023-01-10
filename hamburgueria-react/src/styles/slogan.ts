@@ -34,17 +34,25 @@ export const Aside = styled.aside`
   }
 
   .div-img {
+    display: flex;
     width: 60px;
     height: 60px;
-    padding: 14px 18px 16px 14px;
+    padding: 14px;
     align-items: center;
     justify-content: center;
     background-color: var(--color-primery-50);
+    border-radius: 4px;
   }
 
   p {
     font-size: 14px;
     font-weight: 400;
     color: var(--grey-50);
+  }
+
+  @media (max-width: 699px) {
+    .slogan {
+      display: none;
+    }
   }
 `;

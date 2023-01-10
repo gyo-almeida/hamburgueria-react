@@ -49,4 +49,16 @@ export const Li = styled.li`
     border: 2px solid var(--color-primery);
     border-radius: 8px;
   }
+
+  @media (max-width: 699px) {
+    width: 47%;
+  }
+
+  @media (max-width: 599px) {
+    width: 40%;
+  }
+
+  @media (max-width: 550px) {
+    width: 80%;
+  }
 `;

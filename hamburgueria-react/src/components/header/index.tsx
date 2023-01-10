@@ -1,5 +1,6 @@
 import cart from "../img/cart.png";
 import exit from "../img/exit.png";
+import lupa from "../img/lupa.png";
 import Modal from "react-modal";
 import { HeaderStyle } from "../../styles/header";
 import { FormEvent, useContext, useState } from "react";
@@ -49,7 +50,9 @@ export function Header() {
           />
           <button type="submit">Pesquisar</button>
         </form>
+
         <div className="icons">
+          <img src={lupa} alt="icon lupa" className="search-mobile" />
           <span>{filteredProducts.length}</span>
           <img
             onClick={openModal}
