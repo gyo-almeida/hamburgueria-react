@@ -61,10 +61,8 @@ export function LoginProvider({ children }: iLoginProps) {
       const response = request.data;
       const { accessToken, user: userResponse } = response;
 
-      const userJson = JSON.stringify(userResponse);
-
       localStorage.setItem("@TOKEN", accessToken);
-      localStorage.setItem("@USER", userJson);
+      localStorage.setItem("@USER", userResponse);
 
       setUser(userResponse);
       navigate("/homePage", { replace: true });

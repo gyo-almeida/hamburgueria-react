@@ -31,8 +31,9 @@ export function ProductProvider({ children }: iProductProps) {
   const [filteredProducts, setFilteredProducts] = useState([] as iProduct[]);
 
   useEffect(() => {
+    const token = localStorage.getItem("@TOKEN");
+
     async function getApi() {
-      const token = localStorage.getItem("@TOKEN");
       api.defaults.headers.common.authorization = `Bearer ${token}`;
 
       const { data } = await api.get("/products");

@@ -4,17 +4,16 @@ import { Login } from "../components/login";
 
 export function LoginPage() {
   const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem("@TOKEN");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("@TOKEN");
-
     if (token) {
       navigate("/homePage", { replace: true });
     }
 
     setLoading(false);
-  }, [navigate]);
+  }, [navigate, token]);
 
   if (loading) {
     return null;

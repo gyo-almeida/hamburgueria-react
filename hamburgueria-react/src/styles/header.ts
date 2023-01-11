@@ -29,8 +29,10 @@ export const HeaderStyle = styled.header`
   }
 
   form {
+    display: flex;
     height: 60px;
     width: 70%;
+    gap: 5px;
     align-items: center;
     border: solid 2px var(--grey-20);
     background-color: var(--white);
@@ -86,10 +88,6 @@ export const HeaderStyle = styled.header`
   }
 
   @media (max-width: 850px) {
-    form button {
-      color: transparent;
-    }
-
     section {
       gap: 0;
       justify-content: center;
@@ -108,11 +106,21 @@ export const HeaderStyle = styled.header`
     }
 
     .icons span {
-      left: 45%;
+      left: -77%;
+    }
+    .cart-icon {
+      margin-left: -84px;
+    }
+
+    section {
+      flex-direction: column-reverse;
+      gap: 15px;
+      align-items: center;
+      width: 90%;
     }
 
     form {
-      display: none;
+      width: 90%;
     }
   }
 `;

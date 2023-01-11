@@ -1,12 +1,11 @@
 import cart from "../img/cart.png";
 import exit from "../img/exit.png";
-import lupa from "../img/lupa.png";
+import lupaSearch from "../img/lupa-white.png";
 import Modal from "react-modal";
 import { HeaderStyle } from "../../styles/header";
 import { FormEvent, useContext, useState } from "react";
 import { ProductContext } from "../../context/productsContext";
 import { useNavigate } from "react-router-dom";
-import { modalPosition } from "../../styles/modal";
 import { Cart } from "../cart";
 
 Modal.setAppElement("#root");
@@ -14,6 +13,7 @@ Modal.setAppElement("#root");
 export function Header() {
   const { setSearch, filteredProducts } = useContext(ProductContext);
   const [isOpen, setIsOpen] = useState(false);
+
   const navigate = useNavigate();
 
   function openModal() {
@@ -48,21 +48,24 @@ export function Header() {
             placeholder="Pesquise..."
             onChange={(event) => setSearch(event.target.value.toLowerCase())}
           />
-          <button type="submit">Pesquisar</button>
+          <button type="submit">
+            <img src={lupaSearch} alt="" />
+          </button>{" "}
         </form>
 
         <div className="icons">
-          <img src={lupa} alt="icon lupa" className="search-mobile" />
           <span>{filteredProducts.length}</span>
           <img
             onClick={openModal}
             src={cart}
             alt="icon carrinho hamburgueria da Kenzie"
+            className="cart-icon"
           />
           <Modal
             isOpen={isOpen}
             onRequestClose={closeModal}
-            style={modalPosition}
+            overlayClassName="modal-overlay"
+            className="modal-content"
           >
             <Cart close={closeModal} />
           </Modal>

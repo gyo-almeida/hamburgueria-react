@@ -30,4 +30,14 @@ export const Div = styled.div`
     gap: 16px;
     border-bottom: solid 3px var(--grey-20);
   }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+
+  @media (max-width: 350px) {
+    .title h3 {
+      font-size: 14px;
+    }
+  }
 `;
