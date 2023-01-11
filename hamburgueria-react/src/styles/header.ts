@@ -13,6 +13,7 @@ export const HeaderStyle = styled.header`
     gap: 0;
     background-color: var(--grey-0);
     align-items: center;
+    cursor: default;
   }
 
   .logo span {
@@ -81,6 +82,7 @@ export const HeaderStyle = styled.header`
     color: var(--grey-0);
     background-color: var(--color-secondary);
     border-radius: 4px;
+    cursor: pointer;
   }
 
   .search-mobile {

@@ -6,6 +6,10 @@ export const Li = styled.li`
   border: 2px solid var(--grey-20);
   border-radius: 5px;
 
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
   img {
     width: 100%;
     height: 150px;
@@ -17,6 +21,7 @@ export const Li = styled.li`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    cursor: default;
   }
 
   h3 {
@@ -48,6 +53,12 @@ export const Li = styled.li`
     background-color: var(--color-primery);
     border: 2px solid var(--color-primery);
     border-radius: 8px;
+  }
+
+  button:hover {
+    background-color: var(--white);
+    border: solid 2px var(--color-secondary);
+    color: var(--color-secondary);
   }
 
   @media (max-width: 699px) {

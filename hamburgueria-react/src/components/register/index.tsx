@@ -6,6 +6,7 @@ import { RegisterContext, iData } from "../../context/registerContext";
 import { Div, LinkStyle } from "../../styles/register";
 import { Toaster } from "react-hot-toast";
 import { Slogan } from "../slogan";
+import { motion } from "framer-motion";
 
 export function Register() {
   const { submit } = useContext(RegisterContext);
@@ -21,49 +22,55 @@ export function Register() {
   const submitForm = (data: any) => submit(data);
 
   return (
-    <Div>
-      <Toaster />
-      <Slogan />
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
+      <Div>
+        <Toaster />
+        <Slogan />
 
-      <form onSubmit={handleSubmit(submitForm)}>
-        <div className="header">
-          <h2>Cadastro</h2>
-          <LinkStyle to="/">Retornar para o login</LinkStyle>
-        </div>
+        <form onSubmit={handleSubmit(submitForm)}>
+          <div className="header">
+            <h2>Cadastro</h2>
+            <LinkStyle to="/">Retornar para o login</LinkStyle>
+          </div>
 
-        <input
-          type="text"
-          {...register("name")}
-          name="name"
-          placeholder="Nome"
-        />
-        <p>{errors.name?.message}</p>
+          <input
+            type="text"
+            {...register("name")}
+            name="name"
+            placeholder="Nome"
+          />
+          <p>{errors.name?.message}</p>
 
-        <input
-          type="email"
-          {...register("email")}
-          name="email"
-          placeholder="Email"
-        />
-        <p>{errors.email?.message}</p>
+          <input
+            type="email"
+            {...register("email")}
+            name="email"
+            placeholder="Email"
+          />
+          <p>{errors.email?.message}</p>
 
-        <input
-          type="password"
-          {...register("password")}
-          name="password"
-          placeholder="Senha"
-        />
-        <p>{errors.password?.message}</p>
+          <input
+            type="password"
+            {...register("password")}
+            name="password"
+            placeholder="Senha"
+          />
+          <p>{errors.password?.message}</p>
 
-        <input
-          type="password"
-          {...register("confirmPass")}
-          placeholder="Confirme sua senha"
-        />
-        <p>{errors.confirmPass?.message}</p>
+          <input
+            type="password"
+            {...register("confirmPass")}
+            placeholder="Confirme sua senha"
+          />
+          <p>{errors.confirmPass?.message}</p>
 
-        <button type="submit">Cadastrar</button>
-      </form>
-    </Div>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </Div>
+    </motion.div>
   );
 }

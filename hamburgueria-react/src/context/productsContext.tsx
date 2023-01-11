@@ -40,7 +40,6 @@ export function ProductProvider({ children }: iProductProps) {
       const { data } = await api.get("/products");
 
       setProducts(data);
-      console.log(data);
     }
 
     getApi();

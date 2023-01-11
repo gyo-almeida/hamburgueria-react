@@ -54,7 +54,7 @@ export function Header() {
         </form>
 
         <div className="icons">
-          <span>{filteredProducts.length}</span>
+          <span onClick={openModal}>{filteredProducts.length}</span>
           <img
             onClick={openModal}
             src={cart}

@@ -3,10 +3,15 @@ import { ProductsList } from "../list";
 import { Style } from "../../styles/global";
 import { Main } from "../../styles/homePage";
 import { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
 
 export function HomePage() {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
       <Toaster />
       <Style />
 
@@ -15,6 +20,6 @@ export function HomePage() {
       <Main>
         <ProductsList />
       </Main>
-    </div>
+    </motion.div>
   );
 }
