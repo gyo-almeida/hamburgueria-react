@@ -1,6 +1,6 @@
 import React, { createContext, SetStateAction, useEffect } from "react";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { api } from "../request/api";
 
 interface iProductContext {
@@ -29,6 +29,7 @@ export function ProductProvider({ children }: iProductProps) {
   const [products, setProducts] = useState([] as iProduct[]);
   const [search, setSearch] = useState("" as string);
   const [filteredProducts, setFilteredProducts] = useState([] as iProduct[]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("@TOKEN");
@@ -39,10 +40,11 @@ export function ProductProvider({ children }: iProductProps) {
       const { data } = await api.get("/products");
 
       setProducts(data);
+      console.log(data);
     }
 
     getApi();
-  }, []);
+  }, [navigate]);
 
   return (
     <>

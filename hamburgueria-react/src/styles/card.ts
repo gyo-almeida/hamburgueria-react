@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Li = styled.li`
-  width: 29%;
+  min-width: 29%;
   background-color: var(--white);
   border: 2px solid var(--grey-20);
   border-radius: 5px;

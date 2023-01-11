@@ -30,11 +30,11 @@ export const LoginContext = createContext({} as iLoginContext);
 export function LoginProvider({ children }: iLoginProps) {
   const [user, setUser] = useState<iLogin | null>(null);
   const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem("@TOKEN");
   const navigate = useNavigate();
 
   useEffect(() => {
     function loadingUser() {
-      const token = localStorage.getItem("@TOKEN");
       const user: any = localStorage.getItem("@USER");
 
       if (!token) {
@@ -52,7 +52,7 @@ export function LoginProvider({ children }: iLoginProps) {
     }
 
     loadingUser();
-  }, []);
+  }, [token]);
 
   async function submit(data: iLogin) {
     try {
