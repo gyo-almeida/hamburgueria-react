@@ -52,8 +52,8 @@ Para iniciar a Hamburgueria React localmente, siga estas etapas:
 
 ## Funcionalidades Principais
 
-**Criação de Usuários:** Cadastre-se para ter uma conta personalizada.
-**Validação de Formulários:** Utilização do Yup e React Hook Form para garantir dados válidos.
-**Compra de Lanches:** Explore o menu, adicione lanches ao carrinho e finalize a compra.
+-**Criação de Usuários:** Cadastre-se para ter uma conta personalizada.
+-**Validação de Formulários:** Utilização do Yup e React Hook Form para garantir dados válidos.
+-**Compra de Lanches:** Explore o menu, adicione lanches ao carrinho e finalize a compra.
 
 Link para conhecer o projeto: https://hamburgueria-react-zeta.vercel.app 
