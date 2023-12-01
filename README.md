@@ -38,6 +38,7 @@ Para iniciar a Hamburgueria React localmente, siga estas etapas:
   npm install
   # ou
   yarn install
+  ```
 
 3. Execute a aplicação:
 
@@ -45,6 +46,7 @@ Para iniciar a Hamburgueria React localmente, siga estas etapas:
   npm start
   # ou
   yarn start
+  ```
 
 4. Abra a aplicação em um navegador web.
 
