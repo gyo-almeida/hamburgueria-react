@@ -21,7 +21,6 @@ O projeto utiliza as seguintes tecnologias e bibliotecas:
 - **React Modal:** Componente para criar modais de forma fácil.
 - **React Hot Toast:** Notificações toast para mensagens interativas.
 - **@hookform/resolvers:** Resolvedores adicionais para o React Hook Form.
-- **@testing-library/jest-dom, @testing-library/react, @testing-library/user-event:** Ferramentas para testes de componentes React.
 
 ## Instalação e Execução
 
